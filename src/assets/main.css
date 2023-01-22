@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody&family=Comfortaa:wght@400;700&family=Dosis&family=Roboto&family=Rubik+Bubbles&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+ overflow-y: scroll;
+}
