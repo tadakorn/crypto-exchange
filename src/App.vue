@@ -1,15 +1,19 @@
 <template>
-  <div class="header">
-    <NavBar />
+  <div class="d-flex flex-column" style="min-height: 100vh">
+    <header>
+      <NavBar />
+    </header>
+
+    <main class="mt-4 flex-grow-1">
+      <div class="container">
+        <RouterView />
+      </div>
+    </main>
+
+    <footer class="py-3">
+      <FooterEnd />
+    </footer>
   </div>
-
-  <main class="mt-4">
-    <div class="container">
-      <RouterView />
-    </div>
-  </main>
-
-  <FooterEnd />
 </template>
 
 <script>

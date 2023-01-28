@@ -1,9 +1,9 @@
 <template>
   <div class="d-flex justify-content-center">
-    <div class="rounded border border-2 form-outline">
+    <div class="rounded border border-2 form-outline p-4">
       <form id="form" class="form" @submit.prevent="validateForm">
-        <h2 class="text-center">Login</h2>
-        <div class="mb-3 mt-3">
+        <h3 class="text-center">Login</h3>
+        <div class="my-3">
           <label for="username">Username</label>
           <input
             class="form-control"
@@ -74,13 +74,10 @@ export default {
 .form-outline {
   border-radius: 1px;
   background-color: #fff;
-  width: 392px;
-  padding: 10px 15px;
+  width: 400px;
   box-sizing: inherit;
 }
-.form {
-  padding: 30px;
-}
+
 .text-error {
   color: #ff2626;
   text-align: center;
@@ -95,6 +92,6 @@ export default {
   width: 100%;
   display: block;
   font-size: 16px;
-  padding: 10px;
+  padding: 5px;
 }
 </style>

@@ -5,4 +5,11 @@
 }
 body {
  overflow-y: scroll;
+ /* d-flex flex-column h-100 */
+}
+
+#app {
+  display: flex;
+ flex-direction: column;
+ height: 100%;
 }

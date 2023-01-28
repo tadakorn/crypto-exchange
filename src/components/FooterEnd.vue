@@ -1,52 +1,49 @@
 <template>
-  <div class="container">
-    <footer class="py-5">
-      <div class="d-flex justify-content-around gap-5 my-5">
-        <div v-for="data in infoSocial" :key="data.info">
-          <h5 class="service-title">{{ data.title }}</h5>
-          <div>
-            <a href="#" class="footer-link text-muted all-service">{{
-              data.about
-            }}</a>
-          </div>
-          <div>
-            <a href="#" class="footer-link text-muted all-service">{{
-              data.careers
-            }}</a>
-          </div>
-          <div>
-            <a href="#" class="footer-link text-muted all-service">{{
-              data.business
-            }}</a>
-          </div>
-          <div>
-            <a href="#" class="footer-link text-muted all-service">{{
-              data.community
-            }}</a>
-          </div>
-          <div>
-            <a href="#" class="footer-link text-muted all-service">{{
-              data.binance
-            }}</a>
-          </div>
+  <div class="container mt-5">
+    <div class="d-flex justify-content-around gap-5 mb-4">
+      <div v-for="data in infoSocial" :key="data.info">
+        <h5 class="service-title">{{ data.title }}</h5>
+        <div>
+          <a href="#" class="footer-link text-muted all-service">{{
+            data.about
+          }}</a>
         </div>
-
-        <div class="text-center">
-          <h5 class="service-title">Community</h5>
-          <div class="row justify-content-center">
-            <div class="col-3 my-2" v-for="app in img" :key="app.img">
-              <a href="#" class="text-center device-download"
-                ><img :src="`/img/${app.img}.png`" width="16" height="16" />
-              </a>
-            </div>
-          </div>
+        <div>
+          <a href="#" class="footer-link text-muted all-service">{{
+            data.careers
+          }}</a>
+        </div>
+        <div>
+          <a href="#" class="footer-link text-muted all-service">{{
+            data.business
+          }}</a>
+        </div>
+        <div>
+          <a href="#" class="footer-link text-muted all-service">{{
+            data.community
+          }}</a>
+        </div>
+        <div>
+          <a href="#" class="footer-link text-muted all-service">{{
+            data.binance
+          }}</a>
         </div>
       </div>
 
-      <div class="border-top text-center text-muted">
-        <p class="mt-2 service-title">Binance © 2023</p>
+      <div class="text-center">
+        <h5 class="service-title">Community</h5>
+        <div class="row justify-content-center">
+          <div class="col-3 my-2 p-0" v-for="app in img" :key="app.img">
+            <a href="#" class="text-center"
+              ><img :src="`/img/${app.img}.png`" width="14" height="14" />
+            </a>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+
+    <div class="border-top"></div>
+    <p class="mt-4 text-center service-title text-muted">Binance © 2023</p>
   </div>
 </template>
 
@@ -125,11 +122,6 @@ export default {
 </script>
 
 <style scoped>
-.device-download {
-  flex: 0 0 33.33%;
-  margin-bottom: 40px;
-}
-
 .scan-to-download {
   background-color: #fafafa;
 }
@@ -143,5 +135,8 @@ export default {
 
 .footer-link {
   text-decoration: none;
+}
+
+.footer-position {
 }
 </style>
