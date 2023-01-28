@@ -68,38 +68,44 @@
   </table>
 
   <!-- ระบบ page เพื่อแบ่งข้อมูลจาก coinList เป็นหน้าๆ โดยใช้เลขเป็นตัวกำหนด -->
-  <div class="d-flex gap-1 justify-content-end align-items-center mb-4 mt-2">
-    <button
-      class="btn page-arrow"
-      :class="{
-        disabled: currentPage === 1,
-      }"
-      @click.prevent="changePreviousPage"
-    >
-      <font-awesome-icon icon="fa-solid fa-chevron-left" />
-    </button>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div
+        class="d-flex gap-1 justify-content-end align-items-center mb-4 mt-2"
+      >
+        <button
+          class="btn page-arrow"
+          :class="{
+            disabled: currentPage === 1,
+          }"
+          @click.prevent="changePreviousPage"
+        >
+          <font-awesome-icon icon="fa-solid fa-chevron-left" />
+        </button>
 
-    <button
-      class="btn btn-sm"
-      :class="{
-        'btn-warning': currentPage == n,
-      }"
-      v-for="n in totalPages"
-      :key="n"
-      @click="changePage(n)"
-    >
-      {{ n }}
-    </button>
+        <button
+          class="btn btn-sm"
+          :class="{
+            'btn-warning': currentPage == n,
+          }"
+          v-for="n in totalPages"
+          :key="n"
+          @click="changePage(n)"
+        >
+          {{ n }}
+        </button>
 
-    <button
-      class="btn page-arrow"
-      :class="{
-        disabled: currentPage === totalPages,
-      }"
-      @click.prevent="changeNextPage"
-    >
-      <font-awesome-icon icon="fa-solid fa-chevron-right" />
-    </button>
+        <button
+          class="btn page-arrow"
+          :class="{
+            disabled: currentPage === totalPages,
+          }"
+          @click.prevent="changeNextPage "
+        >
+          <font-awesome-icon icon="fa-solid fa-chevron-right" />
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 <script>

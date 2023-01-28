@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-6">
       <AvailableBalance
         :availableBuyBalance="availableBuyBalance"

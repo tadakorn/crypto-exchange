@@ -5,23 +5,23 @@
 
   <main class="mt-4">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <RouterView />
-        </div>
-      </div>
+      <RouterView />
     </div>
   </main>
+
+  <FooterEnd />
 </template>
 
 <script>
 import { RouterView } from "vue-router";
 import NavBar from "./components/NavBar.vue";
+import FooterEnd from "./components/FooterEnd.vue";
 
 export default {
   components: {
     RouterView,
     NavBar,
+    FooterEnd,
   },
 };
 </script>

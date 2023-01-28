@@ -2,7 +2,7 @@
   <div class="d-flex market">
     <div class="me-auto p-2">{{ title }}</div>
     <div class="p-2">
-      <input type="number" :placeholder="placeholder" class="market-input" />
+      <input class="market-input" type="number" :placeholder="placeholder" />
     </div>
     <div class="p-2">{{ currency }}</div>
   </div>

@@ -4,22 +4,22 @@
     <!-- <div class="ms-auto p-2 bd-highlight">Markets overview</div> -->
   </div>
   <div class="row">
-    <div class="col-3">
+    <div class="col-sm-12 col-md-3">
       <MarketTopCoin title="Highlight Coin" :coinData="coinGroup.highlight" />
     </div>
-    <div class="col-3">
+    <div class="col-sm-12 col-md-3">
       <MarketTopCoin title="New Listing" :coinData="coinGroup.newListing" />
     </div>
-    <div class="col-3">
+    <div class="col-sm-12 col-md-3">
       <MarketTopCoin title="Top Gainer Coin" :coinData="coinGroup.topGainer" />
     </div>
-    <div class="col-3">
+    <div class="col-sm-12 col-md-3">
       <MarketTopCoin title="Top Volume Coin" :coinData="coinGroup.topVolume" />
     </div>
   </div>
 
   <div class="row">
-    <div class="col-12">
+    <div class="col-sm-12 col-md-12">
       <MarketTable :coinList="coinList" :pageCount="pageCount" />
     </div>
   </div>

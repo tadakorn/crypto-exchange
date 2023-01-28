@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import VueApexCharts from "vue3-apexcharts";
 
 import "./assets/main.css";
 
@@ -38,6 +39,7 @@ library.add(
 const app = createApp(App);
 
 app.use(router);
+app.use(VueApexCharts);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
 import "bootstrap/dist/js/bootstrap.js";

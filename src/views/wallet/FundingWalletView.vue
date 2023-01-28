@@ -59,28 +59,24 @@
 
   <div class="row p-2">
     <div class="col-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Assets</th>
-            <th scope="col">Tota Amount</th>
-            <th scope="col">Avalable</th>
-            <th scope="col">Frozen</th>
-            <th scope="col">BTC Value</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <FundingTable />
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import FundingTable from "../../components/wallet/FundingTable.vue";
+export default {
+  components: {
+    FundingTable,
+  },
+  data() {
+    return {
+      title: "",
+    };
+  },
+};
+</script>
 
 <style scoped>
 .funding {

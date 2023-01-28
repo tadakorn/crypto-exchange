@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex bd-highlight gap-3">
-    <div class="flex-grow-1 bd-highlight wallet"><h2>Spot Wallet</h2></div>
+    <div class="flex-grow-1 bd-highlight funding"><h2>Funding</h2></div>
     <div class="bd-highlight">
       <button type="button" class="btn btn-warning">Deposit</button>
     </div>
@@ -19,21 +19,13 @@
   </div>
 
   <div class="row">
-    <div class="col-4">
-      <p>Estimate</p>
-      <p>0.0123</p>
+    <div class="col-9">
+      <p>Estimated Balance</p>
+      <p>{{ estimated }} BTC</p>
     </div>
     <div class="col-3">
-      <p>Spot Balance</p>
-      <p>0.0123</p>
-    </div>
-    <div class="col-3">
-      <p>Fiat Balance</p>
-      <p>0.0123</p>
-    </div>
-    <div class="col-2">
-      <p>Today's PNL</p>
-      <p>0.0123</p>
+      <p>Buy / Sell</p>
+      <p>{{ buyEstimated }}</p>
     </div>
   </div>
   <hr />
@@ -67,31 +59,29 @@
 
   <div class="row p-2">
     <div class="col-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Coin</th>
-            <th scope="col">Total</th>
-            <th scope="col">Avalable</th>
-            <th scope="col">In order</th>
-            <th scope="col">BTC Value</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <SpotTable />
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import SpotTable from "../../components/wallet/SpotTable.vue";
+
+export default {
+  components: {
+    SpotTable,
+  },
+  data() {
+    return {
+      estimated: 0.0000365,
+      buyEstimated: 0.0000365,
+    };
+  },
+};
+</script>
 
 <style scoped>
-.wallet {
+.funding {
   padding-bottom: 50px;
 }
 </style>

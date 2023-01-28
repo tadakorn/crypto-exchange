@@ -1,8 +1,6 @@
 <template>
-  <section class="login">
-    <div
-      class="rounded border border-2 form-outline position-absolute top-50 start-50 translate-middle"
-    >
+  <div class="d-flex justify-content-center">
+    <div class="rounded border border-2 form-outline">
       <form id="form" class="form" @submit.prevent="validateForm">
         <h2 class="text-center">Login</h2>
         <div class="mb-3 mt-3">
@@ -32,7 +30,7 @@
         {{ process }}
       </form>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
