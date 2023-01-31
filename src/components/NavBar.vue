@@ -40,7 +40,16 @@
       </ul>
 
       <div class="navbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" v-if="authStore.accessToken">
+          <!-- <li class="nav-item">
+            <RouterLink to="/register" class="nav-link">Register</RouterLink>
+          </li> -->
+          <li class="nav-item align-middle">
+            <a href="#" class="nav-link" @click="logout">Log out</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav" v-else>
           <li class="nav-item">
             <RouterLink to="/register" class="nav-link">Register</RouterLink>
           </li>
@@ -52,3 +61,20 @@
     </div>
   </nav>
 </template>
+
+<script>
+import { useAuthStore } from "../stores/auth";
+
+export default {
+  setup() {
+    const authStore = useAuthStore();
+    return { authStore };
+  },
+  methods: {
+    logout() {
+      this.authStore.logout();
+      this.$router.push("/");
+    },
+  },
+};
+</script>

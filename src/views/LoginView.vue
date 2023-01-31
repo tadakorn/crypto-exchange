@@ -4,12 +4,12 @@
       <form id="form" class="form" @submit.prevent="validateForm">
         <h3 class="text-center">Login</h3>
         <div class="my-3">
-          <label for="username">Username</label>
+          <label for="email">Email</label>
           <input
             class="form-control"
-            type="text"
-            placeholder="Enter Your Username"
-            v-model="username"
+            type="email"
+            placeholder="Enter Your Email"
+            v-model="email"
           />
         </div>
         <div class="mb-3">
@@ -27,40 +27,37 @@
           </p>
         </div>
         <button type="submit">Login</button>
-        {{ process }}
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import { useAuthStore } from "../stores/auth";
 
 export default {
+  setup() {
+    const authStore = useAuthStore();
+    return { authStore };
+  },
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
       errorMessage: "",
       errorMessageShow: false,
     };
   },
   methods: {
-    validateForm() {
-      if (this.username && this.password) {
-        axios
-          .post("{{url}}/api/auth/login", {
-            username: this.username,
-            password: this.password,
-          })
-          .then((res) => {
-            sessionStorage.setItem("accessToken", res.data.access_token);
-            this.$router.push("/login-1");
-          })
-          .catch((err) => {
-            this.errorMessage = err.response.data.detail;
-            this.errorMessageShow = true;
-          });
+    async validateForm() {
+      if (this.email && this.password) {
+        try {
+          await this.authStore.login(this.email, this.password);
+          this.$router.push("/");
+        } catch (err) {
+          this.errorMessage = err.response.data.detail;
+          this.errorMessageShow = true;
+        }
       } else {
         this.errorMessage = "คุณยังไม่ได้กรอก";
         this.errorMessageShow = true;

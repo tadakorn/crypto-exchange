@@ -3,6 +3,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import VueApexCharts from "vue3-apexcharts";
+import VueCookies from "vue-cookies";
+import { createPinia } from "pinia";
 
 import "./assets/main.css";
 
@@ -40,6 +42,8 @@ const app = createApp(App);
 
 app.use(router);
 app.use(VueApexCharts);
+app.use(VueCookies);
+app.use(createPinia());
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
 import "bootstrap/dist/js/bootstrap.js";

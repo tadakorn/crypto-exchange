@@ -61,6 +61,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
@@ -73,7 +74,13 @@ export default {
   },
   methods: {
     validateForm() {
-      if (this.email && this.password && this.confirmPassword) {
+      if (
+        this.email &&
+        this.password &&
+        this.confirmPassword &&
+        this.apiKey &&
+        this.apiSecret
+      ) {
         if (this.password != this.confirmPassword) {
           alert("คุณใส่รหัสผ่านไม่ตรงกัน");
         } else {
@@ -81,10 +88,12 @@ export default {
             .post("https://express-auth-kihk.onrender.com/api/auth/register", {
               email: this.email,
               password: this.password,
+              binanceApiKey: this.apiKey,
+              binanceApiSecret: this.apiSecret,
             })
             .then((res) => {
               console.log(res.data);
-              this.$router.push("/login-1/login");
+              this.$router.push("/login");
             })
             .catch((err) => {
               alert(JSON.stringify(err.response.data));
